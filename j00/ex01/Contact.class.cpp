@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/06 13:16:08 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/07 11:51:07 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/08 16:17:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,9 @@ std::string Contact::_display_error(const char *info) const
 std::string Contact::_display_info(const char *info) const
 {
 	std::string data;
-   std::cout << info << " : ";
-   std::getline(std::cin, data, '\n');
-   return data;
+	std::cout << info << " : ";
+  std::getline(std::cin, data, '\n');
+  return data;
 }
 
 int Contact::_nbContacts = 0;

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/06 13:16:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/07 14:24:24 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/08 12:02:35 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ class Contact
 
 		Contact(void);
 		~Contact(void);
-      void add_contact(void);
-      void show_contact(int i) const;
-      void show_info(void) const;
+		void add_contact(void);
+		void show_contact(int i) const;
+		void show_info(void) const;
 
 	private:
 		static int _nbContacts;
