@@ -6,11 +6,11 @@
 #    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/06 13:32:12 by vquesnel          #+#    #+#              #
-#    Updated: 2018/01/06 13:39:35 by vquesnel         ###   ########.fr        #
+#    Updated: 2018/01/08 21:58:49 by vquesnel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= phoneBook
+NAME= megaphone
 LOGIN= vquesnel
 
 SRCS= megaphone.cpp

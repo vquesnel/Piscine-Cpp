@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/06 13:15:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/07 11:50:25 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/08 22:17:53 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void search_key(Contact *ct) {
    int e = 0;
    display_column();
    while (j < 8) {
-      if (!ct[j].login.empty()) {
+      if (!ct[j].getLogin().empty()) {
          ct[j].show_contact(j);
          e++;
       }
@@ -52,6 +52,7 @@ static void search_key(Contact *ct) {
    }
    else {
       std::cout << std::setw(80 / 2) <<"your phoneBook seems to be empty" << std::endl;
+      std::cout << std::setw(82 / 2) <<"To add a contact use `ADD` command" << std::endl;
    }
 }
 
@@ -70,14 +71,12 @@ int main(void)
 		}
 		else if (key == "SEARCH")
          search_key(ct);
-		else if (key == "EXIT")
-		{
-			std::cout << "Your contacts has been deleted" << std::endl;
-			break ;
-		}
-      else {
-         std::cout << "Error: Please Enter ADD, SEARCH or EXIT." << std::endl;
+		else if (key == "EXIT") {
+         std::cout << "Your contacts has been deleted" << std::endl;
+         return 0;
       }
+      else
+         std::cout << "Error: Please Enter ADD, SEARCH or EXIT." << std::endl;
 	}
-	return (0);
+	return 0;
 }

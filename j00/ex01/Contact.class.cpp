@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/06 13:16:08 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/08 16:17:09 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/08 22:17:44 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 Contact::Contact(void)
 {
 	Contact::_nbContacts++;
-	if (Contact::_nbContacts == 8)
-		std::cout << "Contact list initialized" << std::endl;
+	if (Contact::_nbContacts == 8) {
+		std::cout << std::setw(40/2) << "Command:" << std::endl
+		 << std::right << std::setw(25) << "ADD --> add contact" << std::endl <<
+		 "SEARCH --> search into your phoneBook" << std::endl << std::right <<
+		std::setw(30) << "EXIT --> exit the programm" << std::endl;
+	}
 	return;
 }
 
@@ -25,34 +29,40 @@ Contact::~Contact(void)
 	return;
 }
 
-void Contact::_add_info(const char *info){
+std::string Contact::getLogin(void) const
+{
+		return this->_login;
+}
+
+void Contact::_add_info(const char *info)
+{
 	std::string data = this->_display_info(info);
 	while (data.empty())
 	{
 		data = this->_display_error(info);
 	}
 	if ( strcmp(info, "first name") == 0)
-			this->first_name = data;
+			this->_first_name = data;
 	else if ( strcmp(info, "last name") == 0)
-			this->last_name = data;
+			this->_last_name = data;
 	else if ( strcmp(info, "nickname") == 0)
-			this->nickname = data;
+			this->_nickname = data;
 	else if ( strcmp(info, "login") == 0)
-			this->login = data;
+			this->_login = data;
 	else if ( strcmp(info, "postal adress") == 0)
-			this->postal_adress = data;
+			this->_postal_adress = data;
 	else if ( strcmp(info, "email adress") == 0)
-			this->email_adress = data;
+			this->_email_adress = data;
 	else if ( strcmp(info, "phone number") == 0)
-			this->phone_number = data;
+			this->_phone_number = data;
 	else if ( strcmp(info, "birthday date") == 0)
-			this->birthday_date = data;
+			this->_birthday_date = data;
 	else if ( strcmp(info, "favorite meal") == 0)
-			this->favorite_meal = data;
+			this->_favorite_meal = data;
 	else if ( strcmp(info, "underwear color") == 0)
-			this->underwear_color = data;
+			this->_underwear_color = data;
 	else if ( strcmp(info, "darkest secret") == 0)
-			this->darkest_secret = data;
+			this->_darkest_secret = data;
 }
 
 void Contact::add_contact(void)
@@ -79,27 +89,27 @@ void Contact::add_contact(void)
 void Contact::show_contact(int i) const
 {
 	std::cout << std::right << std::setw(10) << i + 1 << "|";
- 	std::cout << std::right << std::setw(10) <<  ((this->first_name.length() > 10) ?
- 	this->first_name.substr(0, 9).append(".") : this->first_name.substr(0, 10)) << "|";
-  	std::cout << std::right << std::setw(10) << ((this->last_name.length() > 10) ?
-	this->last_name.substr(0, 9).append(".") : this->last_name.substr(0, 10)) << "|";
-  	std::cout << std::right << std::setw(10) << ((this->nickname.length() > 10) ?
-	this->nickname.substr(0, 9).append(".") : this->nickname.substr(0, 10)) << "|" << std::endl;
+ 	std::cout << std::right << std::setw(10) <<  ((this->_first_name.length() > 10) ?
+ 	this->_first_name.substr(0, 9).append(".") : this->_first_name.substr(0, 10)) << "|";
+  	std::cout << std::right << std::setw(10) << ((this->_last_name.length() > 10) ?
+	this->_last_name.substr(0, 9).append(".") : this->_last_name.substr(0, 10)) << "|";
+  	std::cout << std::right << std::setw(10) << ((this->_nickname.length() > 10) ?
+	this->_nickname.substr(0, 9).append(".") : this->_nickname.substr(0, 10)) << "|" << std::endl;
 }
 
 void Contact::show_info(void) const
 {
-	std::cout << "first name: " << this->first_name << std::endl;
-	std::cout << "last name: " << this->last_name << std::endl;
-	std::cout << "nickname: " << this->nickname << std::endl;
-	std::cout << "login: " << this->login << std::endl;
-	std::cout << "postal adress: " << this->postal_adress << std::endl;
-	std::cout << "email adress: " << this->email_adress << std::endl;
-	std::cout << "phone number: " << this->phone_number << std::endl;
-	std::cout << "birthday date: " << this->birthday_date << std::endl;
-	std::cout << "favorite meal: " << this->favorite_meal << std::endl;
-	std::cout << "underwear color: " << this->underwear_color << std::endl;
-	std::cout << "darkest secret: " << this->darkest_secret << std::endl;
+	std::cout << "first name: " << this->_first_name << std::endl;
+	std::cout << "last name: " << this->_last_name << std::endl;
+	std::cout << "nickname: " << this->_nickname << std::endl;
+	std::cout << "login: " << this->_login << std::endl;
+	std::cout << "postal adress: " << this->_postal_adress << std::endl;
+	std::cout << "email adress: " << this->_email_adress << std::endl;
+	std::cout << "phone number: " << this->_phone_number << std::endl;
+	std::cout << "birthday date: " << this->_birthday_date << std::endl;
+	std::cout << "favorite meal: " << this->_favorite_meal << std::endl;
+	std::cout << "underwear color: " << this->_underwear_color << std::endl;
+	std::cout << "darkest secret: " << this->_darkest_secret << std::endl;
 }
 
 std::string Contact::_display_error(const char *info) const
@@ -112,8 +122,8 @@ std::string Contact::_display_info(const char *info) const
 {
 	std::string data;
 	std::cout << info << " : ";
-  std::getline(std::cin, data, '\n');
-  return data;
+	std::getline(std::cin, data, '\n');
+	return data;
 }
 
 int Contact::_nbContacts = 0;
