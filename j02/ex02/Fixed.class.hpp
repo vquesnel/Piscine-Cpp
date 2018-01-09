@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:46 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 17:28:14 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 17:33:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ class Fixed {
     Fixed              &min(Fixed &lhs, Fixed &rhs) const;
     static Fixed const &min(Fixed const &lhs, Fixed const &rhs);
     Fixed              &operator++(void);
-    Fixed              operator++(int);
+    Fixed              operator++(int) const;
     Fixed              &operator--(void);
-    Fixed              operator--(int);
+    Fixed              operator--(int) const;
 
     float toFloat(void) const;
     int   toInt(void) const;
