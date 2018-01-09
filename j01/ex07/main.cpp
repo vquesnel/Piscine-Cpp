@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:51:12 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/08 15:47:55 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 19:56:40 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void ft_replace (char **av)
   std::string   av3(av[3]);
 
   newfile = ft_toupper(av[1]) + ".replace";
-  replaceFile.open(newfile);
   file.open(av[1]);
   if (file.is_open()) {
+    replaceFile.open(newfile);
     while (getline(file, line)) {
        buffer += line;
        buffer += "\n";
