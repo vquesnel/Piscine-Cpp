@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 10:14:16 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/08 11:53:19 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:29:17 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Zombie  *ZombieEvent::newZombie(std::string name)
 
 Zombie   *ZombieEvent::randomChump(void)
 {
-  const std::string  *names[] = {
+   const std::string names[] = {
     "Ray", "Orval", "Milford",
     "Jame", "Jimmy", "Efrain",
     "Ralph", "Edmund", "Claudio",

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 17:42:23 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/08 22:27:13 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:58:52 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	Account::makeDeposit(int deposit)
 bool Account::makeWithdrawal(int withdrawal)
 {
   _displayTimestamp();
-  std::cout <<"index:" << this->_accountIndex <<";p_amount:" << this->_amount
+  std::cout << "index:" << this->_accountIndex <<";p_amount:" << this->_amount
   <<";withdrawal:";
 
   if (this->_amount < withdrawal) {

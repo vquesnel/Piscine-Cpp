@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 10:14:19 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/08 11:53:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:28:59 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ int main(void)
   Zombie stackZ3("Jacques", "StormTrooper");
   ZombieEvent event;
 
-  const std::string *type[] = {"Infected", "Dangerous", "StormTrooper"};
+  const std::string type[] = {
+    "Infected",
+    "Dangerous",
+    "StormTrooper"
+  };
 
   std::cout << "let's create 3 zombies on the stack" << std::endl << std::endl;
   stackZ1.announce();
