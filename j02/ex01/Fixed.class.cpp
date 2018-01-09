@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:58 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 13:12:19 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 14:12:15 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,19 @@ Fixed::Fixed(Fixed const &instance)
 Fixed::Fixed(int const i)
 {
   cout << "Int constructor called" << endl;
-  this->setRawBits(i * (256));
+  this->setRawBits(i << Fixed::_nbBits);
 }
 
 Fixed::Fixed(float const f)
 {
+  float byte = 1.0;
+  int check = Fixed::_nbBits;
+  while (check > 0) {
+    byte *= 2;
+    check--;
+  }
   cout << "Float constructor called" << endl;
-  this->setRawBits(roundf(f * (256)));
+  this->setRawBits(f * byte);
 }
 
 Fixed::~Fixed(void)
@@ -67,12 +73,18 @@ void  Fixed::setRawBits(int const raw)
 
 float  Fixed::toFloat(void) const
 {
-  return (this->getRawBits() / (256.0));
+  float byte = 1.0;
+  int check = Fixed::_nbBits;
+  while (check > 0) {
+    byte *= 2;
+    check--;
+  }
+  return (this->getRawBits() / byte);
 }
 
 int    Fixed::toInt(void) const
 {
-  return (this->getRawBits() / 256.0);
+  return (this->getRawBits() >> Fixed::_nbBits);
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i)
