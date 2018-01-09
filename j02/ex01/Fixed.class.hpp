@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:46 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 12:19:16 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/09 14:19:58 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FIXED_CLASS_HPP
 
 # include <iostream>
-using namespace std;
 # include <cmath>
 
 class Fixed {
