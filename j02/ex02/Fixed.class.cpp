@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:58 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 17:29:05 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 14:27:39 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,7 @@ Fixed     Fixed::operator--(int)
   this->_rawBits--;
   return res;
 }
+
 std::ostream &operator<<(std::ostream &o, Fixed const &i)
 {
     o << i.toFloat();
