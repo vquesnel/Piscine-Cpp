@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/06 13:15:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/08 22:17:53 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 11:07:44 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ static void display_index(Contact *ct, int nb_contacts) {
    std::cout << "index : ";
    std::getline(std::cin, index, '\n');
    int nb = std::atoi(index.c_str());
+   if (!std::cin.good()) {
+     std::cout << std::endl << "Bad argument" << std::endl;
+     exit(0);
+   }
    if (std::cin.fail() || nb > 8 || nb < 1 || nb > nb_contacts)
    {
       std::cout << "Please enter a valid index,  between 1 and " << nb_contacts << std::endl;
