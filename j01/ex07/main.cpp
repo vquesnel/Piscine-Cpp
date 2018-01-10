@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:51:12 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 22:03:06 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 09:25:34 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ void ft_replace (char **av)
        buffer += "\n";
     }
     file.close();
-     while (buffer.find(av2) != (size_t)-1)
-       buffer.replace(buffer.find(av2), av2.size(), av3);
-      replaceFile << buffer;
+    while (buffer.find(av2) != (size_t)-1){
+      buffer.replace(buffer.find(av2), av2.size(), av3);
+    }
+    replaceFile << buffer;
+    replaceFile.close();
   }
   else
     std::cout << "unable to open " << av[1] << std::endl;
