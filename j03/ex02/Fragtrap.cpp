@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:39:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 15:41:13 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 21:13:28 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,20 @@ void     FragTrap::_fireAttack(std::string const &target)
 {
     std::cout << "Let's burn this badass" << std::endl << "--> ";
     this->meleeAttack(target);
+}
+
+void     FragTrap::meleeAttack(std::string const &target)
+{
+  std::cout << "FR4G-TP " << this->_name << " attacks " <<
+   target << " at melee, causing " << this->_meleeDamage <<
+   " damage's points !" << std::endl;
+}
+
+void     FragTrap::rangedAttack(std::string const &target)
+{
+    std::cout << "FR4G-TP " << this->_name << " attacks " <<
+    target << " at ranged, causing " << this->_rangedDamage <<
+    " damage's points !" << std::endl;
 }
 
 void    FragTrap::vaulthunter_dot_exe(std::string const &target)

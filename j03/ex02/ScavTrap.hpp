@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 12:53:27 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 15:39:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 21:15:01 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class ScavTrap : public ClapTrap
     ScavTrap(ScavTrap const &instance);
     ~ScavTrap(void);
     ScavTrap    &operator=(ScavTrap const &rhs);
+    void        meleeAttack(std::string const &target);
+    void        rangedAttack(std::string const &target);
     void        challengeNewcomer(std::string const & target);
   private:
     void        _grenadeChallenge(std::string const &target);
