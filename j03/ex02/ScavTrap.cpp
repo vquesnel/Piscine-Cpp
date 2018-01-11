@@ -6,14 +6,14 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 12:53:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 09:21:21 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:54:06 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) :
-  ClapTrap()
+  ClapTrap(),
 {
   this->_maxEp = 50;
   this->_hp = 100;

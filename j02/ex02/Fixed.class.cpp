@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:58 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 09:45:05 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 12:09:50 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ std::ostream &operator<<(std::ostream &o, Fixed const &i)
 
 Fixed				Fixed::operator+(Fixed const &rhs)	const
 {
-  Fixed result(this->toFloat() - rhs.toFloat());
+  Fixed result(this->toFloat() + rhs.toFloat());
 
 	return result;
 }

@@ -6,27 +6,35 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:51:49 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 17:59:39 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:54:27 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
 
-#ifndef SUPERTRAP_H
-# define SUPERTRAP_H
-
-# include <iostream>
-# include "ClapTrap.hpp"
-# include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
 
-class SuperTrap : public FragTrap, public NinjaTrap {
-  public:
+class SuperTrap : virtual public ClapTrap, public FragTrap, public NinjaTrap
+{
+	public:
     SuperTrap(void);
-    SuperTrap(std::string name);
-    SuperTrap(SuperTrap const &instance);
-    ~SuperTrap(void);
-    SuperTrap    &operator=(SuperTrap const &rhs);
+		SuperTrap(std::string name);
+		SuperTrap(SuperTrap const &copy);
+		~SuperTrap(void);
+
+		SuperTrap  &operator=(SuperTrap const &rhs);
+		using FragTrap::rangedAttack;
+		using NinjaTrap::meleeAttack;
+	protected:
+		virutal using FragTrap::_maxHp;
+		virutal using FragTrap::_hp;
+		virutal using NinjaTrap::_maxEp;
+		virutal using NinjaTrap::_ep;
+		virutal using NinjaTrap::_meleeDamage;
+		virutal using FragTrap::_rangedDamage;
+		virutal using FragTrap::_armorDamage;
 
 };
 

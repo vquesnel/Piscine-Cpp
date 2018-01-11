@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:39:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 17:14:02 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 10:28:08 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ FragTrap  &FragTrap::operator=(FragTrap const &rhs)
   if (this != &rhs) {
     this->_name = rhs._name + ".copy";
     this->_hp = rhs._hp;
+    this->_maxEp = rhs._maxEp;
+    this->_maxHp = rhs._maxHp;
     this->_ep = rhs._ep;
     this->_level = rhs._level;
     this->_meleeDamage = rhs._meleeDamage;
@@ -94,6 +96,20 @@ void     FragTrap::_fireAttack(std::string const &target)
 {
     std::cout << "Let's burn this badass" << std::endl << "--> ";
     this->meleeAttack(target);
+}
+
+void     FragTrap::meleeAttack(std::string const &target)
+{
+  std::cout << "FR4G-TP " << this->_name << " attacks " <<
+   target << " at melee, causing " << this->_meleeDamage <<
+   " damage's points !" << std::endl;
+}
+
+void     FragTrap::rangedAttack(std::string const &target)
+{
+    std::cout << "FR4G-TP " << this->_name << " attacks " <<
+    target << " at ranged, causing " << this->_rangedDamage <<
+    " damage's points !" << std::endl;
 }
 
 void    FragTrap::vaulthunter_dot_exe(std::string const &target)

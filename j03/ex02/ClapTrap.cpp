@@ -6,13 +6,14 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 13:57:19 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 17:24:57 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:54:06 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 const int ClapTrap::_maxHp = 100;
+
 ClapTrap::ClapTrap(void) :
   _name("default name")
 {

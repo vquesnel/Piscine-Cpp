@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:10:25 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 17:38:50 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 10:28:30 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ NinjaTrap::NinjaTrap(void) :
 NinjaTrap::NinjaTrap(std::string name) :
   ClapTrap(name)
 {
-  this->_name = name;
   this->_maxHp = 60;
   this->_maxEp = 120;
   this->_hp = 60;
@@ -59,12 +58,27 @@ NinjaTrap  &NinjaTrap::operator=(NinjaTrap const &rhs)
     this->_name = rhs._name + ".copy";
     this->_hp = rhs._hp;
     this->_ep = rhs._ep;
+    this->_maxHp = rhs._maxHp;
+    this->_maxEp = rhs._maxEp;
     this->_level = rhs._level;
     this->_meleeDamage = rhs._meleeDamage;
     this->_rangedDamage = rhs._rangedDamage;
     this->_armorDamage = rhs._armorDamage;
   }
   return *this;
+}
+void     NinjaTrap::meleeAttack(std::string const &target)
+{
+  std::cout << "NINJ4-TP " << this->_name << " attacks " <<
+   target << " at melee, causing " << this->_meleeDamage <<
+   " damage's points !" << std::endl;
+}
+
+void     NinjaTrap::rangedAttack(std::string const &target)
+{
+    std::cout << "NINJ4-TP " << this->_name << " attacks " <<
+    target << " at ranged, causing " << this->_rangedDamage <<
+    " damage's points !" << std::endl;
 }
 void          NinjaTrap::ninjaShoebox(ClapTrap &instance)
 {
