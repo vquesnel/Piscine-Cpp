@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:51:49 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 13:54:27 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:59:24 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ class SuperTrap : virtual public ClapTrap, public FragTrap, public NinjaTrap
 		using FragTrap::rangedAttack;
 		using NinjaTrap::meleeAttack;
 	protected:
-		virutal using FragTrap::_maxHp;
-		virutal using FragTrap::_hp;
-		virutal using NinjaTrap::_maxEp;
-		virutal using NinjaTrap::_ep;
-		virutal using NinjaTrap::_meleeDamage;
-		virutal using FragTrap::_rangedDamage;
-		virutal using FragTrap::_armorDamage;
+		using FragTrap::_maxHp;
+		using FragTrap::_hp;
+		using NinjaTrap::_maxEp;
+		using NinjaTrap::_ep;
+		using NinjaTrap::_meleeDamage;
+		using FragTrap::_rangedDamage;
+		using FragTrap::_armorDamage;
 
 };
 

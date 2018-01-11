@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:51:51 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 13:16:18 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 14:26:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ SuperTrap::SuperTrap(void) :
   FragTrap(),
   NinjaTrap()
 {
+  this->_maxHp = 100;
+  this->_hp = 100;
+  this->_maxEp =  120;
+  this->_ep = 120;
+  this->_meleeDamage = 60;
+  this->_rangedDamage = 20;
+  this->_armorDamage = 5;
+  this->_level = 1;
   std::cout << "SUPER-TP " << this->_name << " is initialized with armor ---> "<< this->_maxHp << std::endl;
 }
 
@@ -25,6 +33,14 @@ SuperTrap::SuperTrap(std::string name) :
   FragTrap(),
   NinjaTrap()
 {
+  this->_maxHp = 100;
+  this->_hp = 100;
+  this->_maxEp =  120;
+  this->_ep = 120;
+  this->_meleeDamage = 60;
+  this->_rangedDamage = 20;
+  this->_armorDamage = 5;
+  this->_level = 1;
   std::cout << "SUPER-TP " << this->_name << " is initialized" << std::endl;
 }
 
@@ -33,6 +49,7 @@ SuperTrap::SuperTrap(SuperTrap const &instance) :
   FragTrap(),
   NinjaTrap()
 {
+  *this = instance;
   std::cout << "SUPER-TP " << this->_name << " is initialized by copy" << std::endl;
   return;
 }
