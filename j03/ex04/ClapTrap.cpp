@@ -6,13 +6,12 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 13:57:19 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/10 17:24:57 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 17:24:30 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-const int ClapTrap::_maxHp = 100;
 ClapTrap::ClapTrap(void) :
   _name("default name")
 {
@@ -41,8 +40,9 @@ ClapTrap  &ClapTrap::operator=(ClapTrap const &rhs)
   if (this != &rhs) {
     this->_name = rhs._name + ".copy";
     this->_hp = rhs._hp;
-    this->_ep = rhs._ep;
     this->_maxEp = rhs._maxEp;
+    this->_maxHp = rhs._maxHp;
+    this->_ep = rhs._ep;
     this->_level = rhs._level;
     this->_meleeDamage = rhs._meleeDamage;
     this->_rangedDamage = rhs._rangedDamage;
