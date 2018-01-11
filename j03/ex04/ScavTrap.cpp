@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 12:53:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 09:21:21 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/10 17:58:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ScavTrap::ScavTrap(void) :
   ClapTrap()
 {
+  this->_maxHp = 100;
   this->_maxEp = 50;
   this->_hp = 100;
   this->_ep = 50;
@@ -28,7 +29,7 @@ ScavTrap::ScavTrap(void) :
 ScavTrap::ScavTrap(std::string name) :
   ClapTrap(name)
 {
-  this->_name = name;
+  this->_maxHp = 100;
   this->_maxEp = 50;
   this->_hp = 100;
   this->_ep = 50;
@@ -88,20 +89,6 @@ void     ScavTrap::_hammerChallenge(std::string const &target)
 void     ScavTrap::_fireChallenge(std::string const &target)
 {
     std::cout << "Hey " << target << "Try to burn this badass" << std::endl;
-}
-
-void     ScavTrap::meleeAttack(std::string const &target)
-{
-  std::cout << "SC4V-TP " << this->_name << " attacks " <<
-   target << " at melee, causing " << this->_meleeDamage <<
-   " damage's points !" << std::endl;
-}
-
-void     ScavTrap::rangedAttack(std::string const &target)
-{
-    std::cout << "SC4V-TP " << this->_name << " attacks " <<
-    target << " at ranged, causing " << this->_rangedDamage <<
-    " damage's points !" << std::endl;
 }
 
 void     ScavTrap::challengeNewcomer(std::string const &target)
