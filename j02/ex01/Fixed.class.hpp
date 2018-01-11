@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:46 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 14:19:58 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 09:29:59 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Fixed {
     int   toInt(void) const;
     int   getRawBits( void ) const;
     void  setRawBits(int const raw);
+    void  setRawBits(float const raw);
 
   private:
     static const int _nbBits;

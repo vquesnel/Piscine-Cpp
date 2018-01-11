@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 10:32:58 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/09 14:21:53 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/11 09:36:29 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,13 @@ Fixed::Fixed(Fixed const &instance)
 Fixed::Fixed(int const i)
 {
   std::cout << "Int constructor called" << std::endl;
-  this->setRawBits(i << Fixed::_nbBits);
+  this->setRawBits(i);
 }
 
 Fixed::Fixed(float const f)
 {
-  float byte = 1.0;
-  int check = Fixed::_nbBits;
-  while (check > 0) {
-    byte *= 2;
-    check--;
-  }
   std::cout << "Float constructor called" << std::endl;
-  this->setRawBits(f * byte);
+  this->setRawBits(f);
 }
 
 Fixed::~Fixed(void)
@@ -54,7 +48,7 @@ Fixed  &Fixed::operator=(Fixed const &rhs)
 {
   std::cout << "Assignation operator called" << std::endl;
   if (this != &rhs)
-    this->setRawBits(rhs.getRawBits());
+    this->_rawBits= rhs._rawBits;
   return *this;
 }
 
@@ -67,24 +61,26 @@ int   Fixed::getRawBits(void) const
 void  Fixed::setRawBits(int const raw)
 {
   // std::cout << "setRawBits member function called" << std::endl;
-  this->_rawBits = raw;
+  this->_rawBits = raw << Fixed::_nbBits;
+  return;
+}
+
+void  Fixed::setRawBits(float const raw)
+{
+  // std::cout << "setRawBits member function called" << std::endl;
+  this->_rawBits = static_cast<int>(roundf(raw * (1 << Fixed::_nbBits)));
   return;
 }
 
 float  Fixed::toFloat(void) const
 {
-  float byte = 1.0;
-  int check = Fixed::_nbBits;
-  while (check > 0) {
-    byte *= 2;
-    check--;
-  }
-  return (this->getRawBits() / byte);
+  return static_cast<float>(this->getRawBits()) /
+        static_cast<float>(1 << Fixed::_nbBits);
 }
 
 int    Fixed::toInt(void) const
 {
-  return (this->getRawBits() >> Fixed::_nbBits);
+  return this->getRawBits() / (1 << Fixed::_nbBits);
 }
 
 std::ostream &operator<<(std::ostream &o, Fixed const &i)
