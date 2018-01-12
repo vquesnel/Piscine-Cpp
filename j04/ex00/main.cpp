@@ -6,13 +6,14 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 18:56:57 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/12 08:07:13 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/12 16:59:44 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "Piou.hpp"
 
 int main() {
 
@@ -22,6 +23,7 @@ int main() {
   Victim *ben = new Peon();
   std::cout << "benJr = ";
   Victim benJr(*ben);
+  Piou test("tony");
 
   std::cout << std::endl << "ben will be polymorph like a Peon" << std::endl
   << *ben;
@@ -29,6 +31,8 @@ int main() {
   std::cout << std::endl << "benJr will be polymorph like a Peon" <<
   std::endl << benJr;
   robert.polymorph(benJr);
+  std::cout << test;
+  robert.polymorph(test);
   std::cout << std::endl <<
   "---------------- Main Test ------------------" << std::endl;
 
