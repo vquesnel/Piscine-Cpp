@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 09:14:22 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/12 13:39:11 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/12 13:54:45 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int main() {
     std::cout << victor;
     victor.attack(d);
     std::cout << victor;
-
     victor.attack(d);
     std::cout << victor;
     victor.attack(d);
