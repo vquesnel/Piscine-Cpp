@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 13:57:19 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 11:06:39 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/12 13:47:27 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void     ClapTrap::beRepaired(unsigned int amount)
 {
   int reparation = (int)amount;
 
-  if (reparation + this->_hp >= this->_maxHp) {
+  if (reparation + this->getHitPoints() >= this->_maxHp) {
     this->_hp = 100;
     std::cout <<  "CL4P-TP "<< this->_name <<
     " has a full HP" <<  std::endl;

@@ -6,12 +6,13 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:39:11 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/12 11:50:37 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/12 13:48:00 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main(void)
 {
