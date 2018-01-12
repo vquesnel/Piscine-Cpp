@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:39:11 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/11 10:26:46 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/12 11:50:37 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int main(void)
 	ScavTrap s1;
 	ScavTrap s2("Human");
 	ScavTrap s3(s2);
+	NinjaTrap n1;
+	NinjaTrap n2("NinjaMan");
+	NinjaTrap n3(n2);
+
 
 
 
@@ -73,5 +77,15 @@ int main(void)
 	 	 std::cout << std::endl;
 	  }
 	 	std::cout << "---------------------------------------------" <<std::endl;
+		while (n2.getHitPoints() > 0) {
+			n2.beRepaired(2);
+			n2.takeDamage(60);
+			n2.meleeAttack("Blightbot");
+			n2.rangedAttack("Holobot");
+			n2.ninjaShoebox(f1);
+			n2.ninjaShoebox(s1);
+			n2.ninjaShoebox(n1);
+			std::cout << std::endl;
+		}
    return (0);
 }
