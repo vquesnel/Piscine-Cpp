@@ -3,44 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-<<<<<<< HEAD
-#    By: mseinic <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/08 13:27:27 by mseinic           #+#    #+#              #
-#    Updated: 2018/01/13 13:46:14 by mseinic          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-COMPILER = clang++
-
-FLAGS = -Wall -Wextra #-Werror
-
-NAME = a.out
-
-SRC = main.cpp Window.cpp GameWin.cpp InfoWin.cpp Screen.cpp 
-
-OBJ = $(SRC:.cpp=.o)
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(COMPILER) $(FLAGS) -o $(NAME) $(OBJ) -lncurses
-
-%.o: %.cpp
-	$(COMPILER) $(FLAGS) -o $@ -c $< 
-
-clean:
-	rm -rf $(OBJ)
-
-fclean: clean
-	rm -rf $(NAME)
-
-re: fclean all
-=======
 #    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/06 13:32:12 by vquesnel          #+#    #+#              #
-#    Updated: 2018/01/13 13:18:55 by vquesnel         ###   ########.fr        #
+#    Updated: 2018/01/13 15:14:15 by vquesnel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,4 +54,3 @@ fclean:	clean
 re:		fclean all
 
 .PHONY: all clean fclean re
->>>>>>> classes ready
