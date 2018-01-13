@@ -3,35 +3,54 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mseinic <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/08 13:27:27 by mseinic           #+#    #+#              #
-#    Updated: 2018/01/13 13:46:14 by mseinic          ###   ########.fr        #
+#    Created: 2018/01/06 13:32:12 by vquesnel          #+#    #+#              #
+#    Updated: 2018/01/13 15:14:15 by vquesnel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-COMPILER = clang++
+NAME= ft_retro
+LOGIN= vquesnel
 
-FLAGS = -Wall -Wextra #-Werror
+SRCS= ABullet.cpp\
+			AEnv.cpp\
+			Enemy.cpp\
+			EnemyBullet.cpp\
+			Player.cpp\
+			PlayerBullet.cpp\
 
-NAME = a.out
+OBJS= $(SRCS:.cpp=.o)
+FLAGS= -Wall -Wextra -Werror -lncurses
 
-SRC = main.cpp Window.cpp GameWin.cpp InfoWin.cpp Screen.cpp 
+$(NAME):	$(OBJS)
+	@clang++ -o $(NAME) $(OBJS)
+	@echo "\033[38;5;79m  [$(NAME)]	Compiled."
+	@echo "\033[34m"
+	@echo "\033[38;5;84m  MMMºººAMV '7MMºººYb.   '7MMºººMq. "
+	@echo "  M'   AMV    MM    'Yb.   MM   'MM."
+	@echo "\033[38;5;85m  '   AMV     MM     'Mb   MM   ,M9 "
+	@echo "     AMV      MM      MM   MMmmdM9  "
+	@echo "\033[38;5;86m    AMV   ,   MM     ,MP   MM"
+	@echo "   AMV   ,M   MM    ,dP'   MM"
+	@echo "\033[38;5;87m  AMVmmmmMM .JMMmmmdP'   .JMML. "
+	@echo ""
+	@echo "\033[38;5;7m [2018]                    [${LOGIN}]"
+	@echo ""
 
-OBJ = $(SRC:.cpp=.o)
+$(OBJS): %.o: %.cpp
+	@clang++ $(FLAGS) -c $< -o $@
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(COMPILER) $(FLAGS) -o $(NAME) $(OBJ) -lncurses
-
-%.o: %.cpp
-	$(COMPILER) $(FLAGS) -o $@ -c $< 
+all:	$(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	@rm -f $(OBJS)
+	@echo "\033[38;5;174m  [$(NAME)]	Objects destroyed.\033[0m"
 
-fclean: clean
-	rm -rf $(NAME)
+fclean:	clean
+	@rm -f $(NAME)
+	@echo "\033[38;5;174m  [$(NAME)]	Binary removed.\033[0m"
 
-re: fclean all
+re:		fclean all
+
+.PHONY: all clean fclean re

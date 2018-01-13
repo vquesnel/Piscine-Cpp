@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:08 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 11:44:35 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/13 13:15:32 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,19 @@ char      Player::getForm(void) const
   return this->_form;
 }
 
-void 	Player::move(int const key, int frameCount) {
+bool  Player::move(int frameCount)
+{
+  	if (frameCount == 0)
+  		return true;
+  	return false;
+}
+
+void 	Player::move(int const key, int const frameCount)
+{
 	if (frameCount){
 		if (key == KEY_UP && this->getY() > (START_Y + 1))
-			_y--;
+			this->_y--;
 		else if (key == KEY_DOWN && this->getY() < (START_Y + HEIGHT - 2))
-			_y++;
+			this->_y++;
 	}
 }

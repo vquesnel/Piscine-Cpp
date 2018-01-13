@@ -1,23 +1,22 @@
+
 #include "PlayerBullet.hpp"
 
-PlayerBullet::PlayerBullet(void)
-{
+PlayerBullet::PlayerBullet(void) :
+  AEnv(),
+  ABullet()
+{}
 
-}
-
-PlayerBullet::PlayerBullet(PlayerBullet const &instance)
+PlayerBullet::PlayerBullet(PlayerBullet const &instance) :
+  AEnv(),
+  ABullet(instance)
 {
   *this = instance;
   return;
 }
 
-PlayerBullet::~PlayerBullet(void)
-{
+PlayerBullet::PlayerBullet(int x, int y) :
+  AEnv(x, y),
+  ABullet()
+{}
 
-}
-
-PlayerBullet    &PlayerBullet::operator=(PlayerBullet const &rhs) {
-  if (this != &rhs) {}
-
-  return (*this);
-}
+PlayerBullet::~PlayerBullet(void) {}
