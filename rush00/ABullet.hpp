@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:46:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 11:52:48 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/13 12:51:33 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "AEnv.hpp"
 
-class ABullet : public AEnv
+class ABullet : public virtual AEnv
 {
   public:
     ABullet(void);

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:01 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 12:09:52 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/13 12:58:29 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ Enemy::Enemy(Enemy const &instance) :
 
 Enemy::~Enemy( void ) {}
 
-bool 	Enemy::move( int timeFrameCount ) {
+bool 	Enemy::move(int frameCount) {
 	if (this->getX() >= 11)
 	{
-		if (timeFrameCount % 2 == 0) {
+		if (frameCount % 2 == 0) {
 			this->_x--;
 		}
 		return true;

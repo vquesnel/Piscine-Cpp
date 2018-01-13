@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:06 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 11:44:35 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/13 13:12:05 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AEnv {
   virtual ~AEnv();
 
   AEnv const    &operator=(AEnv const & rdh);
-  virtual bool	move( int ) = 0;
+  virtual bool	move(int) = 0;
   bool          colision(AEnv *&elem);
   virtual void  toPrint();
   int		        getX( void ) const;

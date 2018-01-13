@@ -3,6 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
+<<<<<<< HEAD
 #    By: mseinic <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/08 13:27:27 by mseinic           #+#    #+#              #
@@ -35,3 +36,56 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+=======
+#    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/01/06 13:32:12 by vquesnel          #+#    #+#              #
+#    Updated: 2018/01/13 13:18:55 by vquesnel         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME= ft_retro
+LOGIN= vquesnel
+
+SRCS= ABullet.cpp\
+			AEnv.cpp\
+			Enemy.cpp\
+			EnemyBullet.cpp\
+			Player.cpp\
+			PlayerBullet.cpp\
+
+OBJS= $(SRCS:.cpp=.o)
+FLAGS= -Wall -Wextra -Werror -lncurses
+
+$(NAME):	$(OBJS)
+	@clang++ -o $(NAME) $(OBJS)
+	@echo "\033[38;5;79m  [$(NAME)]	Compiled."
+	@echo "\033[34m"
+	@echo "\033[38;5;84m  MMMºººAMV '7MMºººYb.   '7MMºººMq. "
+	@echo "  M'   AMV    MM    'Yb.   MM   'MM."
+	@echo "\033[38;5;85m  '   AMV     MM     'Mb   MM   ,M9 "
+	@echo "     AMV      MM      MM   MMmmdM9  "
+	@echo "\033[38;5;86m    AMV   ,   MM     ,MP   MM"
+	@echo "   AMV   ,M   MM    ,dP'   MM"
+	@echo "\033[38;5;87m  AMVmmmmMM .JMMmmmdP'   .JMML. "
+	@echo ""
+	@echo "\033[38;5;7m [2018]                    [${LOGIN}]"
+	@echo ""
+
+$(OBJS): %.o: %.cpp
+	@clang++ $(FLAGS) -c $< -o $@
+
+all:	$(NAME)
+
+clean:
+	@rm -f $(OBJS)
+	@echo "\033[38;5;174m  [$(NAME)]	Objects destroyed.\033[0m"
+
+fclean:	clean
+	@rm -f $(NAME)
+	@echo "\033[38;5;174m  [$(NAME)]	Binary removed.\033[0m"
+
+re:		fclean all
+
+.PHONY: all clean fclean re
+>>>>>>> classes ready
