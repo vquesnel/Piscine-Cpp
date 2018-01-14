@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 12:13:16 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/14 12:03:24 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 13:42:16 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ EnemyBullet::EnemyBullet(void) :
   AEnv(),
   ABullet()
 {
-  this->_form = "+";
+  this->_form = "-";
 }
 
 EnemyBullet::EnemyBullet(EnemyBullet const &instance) :
@@ -32,7 +32,7 @@ EnemyBullet::EnemyBullet(int x, int y) :
   AEnv(x, y),
   ABullet()
 {
-    this->_form = "+";
+    this->_form = "-";
 }
 
 EnemyBullet::~EnemyBullet(void) {}

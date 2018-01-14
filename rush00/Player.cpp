@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:08 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/14 11:56:45 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 14:42:06 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Player::Player(void) :
   AEnv(),
   _life(5)
 {
-  this->_form = "=>";
+  this->_form = "[->";
 }
 
 Player::Player(Player const &instance) :
@@ -31,7 +31,7 @@ Player::Player(int x, int y) :
   AEnv(x, y),
   _life(5)
 {
-  this->_form = "=>";
+  this->_form = "[->";
 }
 
 Player::~Player(void) {}
@@ -50,7 +50,7 @@ bool  Player::move(int frameCount)
 
 void 	Player::move(int const key, int const frameCount)
 {
-	if (frameCount){
+	if (frameCount) {
 		if (key == KEY_UP && this->getY() > (START_Y + 1))
 			this->_y--;
 		else if (key == KEY_DOWN && this->getY() < (START_Y + HEIGHT - 2))

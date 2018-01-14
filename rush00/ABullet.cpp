@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:46:04 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/14 11:54:36 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 13:42:24 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 ABullet::ABullet( void ) :
   AEnv()
 {
-	this->_form = "-";
+	this->_form = ")";
 }
 
 ABullet::ABullet(int x, int y) :
   AEnv(x, y)
 {
-	this->_form = "-";
+	this->_form = ")";
 }
 
 ABullet::ABullet(ABullet const & instance) :
@@ -36,7 +36,7 @@ ABullet::~ABullet( void ) {}
 
 bool 	ABullet::move( int frameCount) {
 
-	if (this->getX() > WIDTH + START_X - 5)
+	if (this->getX() > WIDTH)
 			return false;
 	if (frameCount % 1 == 0){
 		this->_x++;

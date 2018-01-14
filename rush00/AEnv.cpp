@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:09 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/14 12:57:16 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 14:41:52 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,36 +58,39 @@ int       AEnv::getY(void) const
 }
 void	AEnv::toPrint() {
 
-
-	if (this->_form == "#=#")
-	{
+attron(A_BOLD);
+	if (this->_form == "#=#") {
 		attron(COLOR_PAIR(5));
-	    mvprintw(this->_y, this->_x, this->_form.c_str());
+	  mvprintw(this->_y, this->_x, this->_form.c_str());
 		attroff(COLOR_PAIR(5));
 	}
-	else if (this->_form == "[-]")
-	{
+	else if (this->_form == "[-]") {
 		attron(COLOR_PAIR(1));
-	    mvprintw(this->_y, this->_x, this->_form.c_str());
+	  mvprintw(this->_y, this->_x, this->_form.c_str());
 		attroff(COLOR_PAIR(1));
 	}
-	else if (this->_form == "=>")
-	{
+	else if (this->_form == "[->") {
 		attron(COLOR_PAIR(4));
-	    mvprintw(this->_y, this->_x, this->_form.c_str());
+	  mvprintw(this->_y, this->_x, this->_form.c_str());
 		attroff(COLOR_PAIR(4));
 	}
-	else if (this->_form == "+")
-	{
+	else if (this->_form == "-") {
 		attron(COLOR_PAIR(2));
-	    mvprintw(this->_y, this->_x, this->_form.c_str());
+	  mvprintw(this->_y, this->_x, this->_form.c_str());
 		attroff(COLOR_PAIR(2));
 	}
-	else
-	    mvprintw(this->_y, this->_x, this->_form.c_str());
+	else {
+    attron(COLOR_PAIR(3));
+	  mvprintw(this->_y, this->_x, this->_form.c_str());
+    attroff(COLOR_PAIR(3));
+  }
+  attroff(A_BOLD);
 }
 
 bool	AEnv::colision(AEnv *&elem)
 {
-	return (this->getX() >= elem->getX() && this->getY() == elem->getY());
+	return (
+    this->getX() + (int)this->getForm().length() - 1
+    >= elem->getX() &&
+    this->getY() == elem->getY());
 }

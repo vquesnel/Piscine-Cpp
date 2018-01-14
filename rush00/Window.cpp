@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 15:14:14 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/14 12:55:36 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 14:49:49 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Window::Window(Window const &instance) :
 Window::~Window(void)
 {
   destroyWin();
+  use_default_colors();
   endwin();
   std::cout << "YOU LOSE WANNA TRY AGAIN ?" << std::endl;
 
@@ -190,18 +191,21 @@ unsigned int 	  Window::timediff(timeval start, timeval now)
 bool		          Window::handleCollision(void)
 {
   for (int i = 0; i < 50; ++i) {
-    if (this->enemies[i] && this->player.colision(this->enemies[i]))
+    if (this->enemies[i] && this->player.colision(this->enemies[i])) {
       this->getPlayer()._life--;
-      if (this->getPlayer()._life < 0) {
+      delete this->enemies[i];
+      this->enemies[i] = NULL;
+      if (this->getPlayer()._life <= 0) {
         return false;
       }
+    }
   }
   for (int i = 0; i < 400; ++i) {
     if (this->enemyBullets[i] && this->player.colision(this->enemyBullets[i])) {
       delete this->enemyBullets[i];
       this->enemyBullets[i] = NULL;
       this->getPlayer()._life--;
-      if (this->getPlayer()._life < 0)
+      if (this->getPlayer()._life <= 0)
           return false;
     }
   }
@@ -223,7 +227,7 @@ bool		          Window::handleCollision(void)
 void    	Window::createWin(void)
 {
     this->win = newwin(HEIGHT, WIDTH, START_Y, START_X);
-    box(this->win, 0, 0);
+    box(this->win,0,0);
     wrefresh(this->win);
 }
 
@@ -237,18 +241,19 @@ void	Window::destroyWin(void)
 
 void Window::clearMyWin(void)
 {
+  attron(COLOR_PAIR(4));
   for (int i = START_Y + 1; i < HEIGHT + START_Y -1 ; i++) {
     for (int j = START_X +1 ; j < WIDTH + START_X -1; j++) {
       mvprintw(i, j, " ");
     }
   }
-
+  attroff(COLOR_PAIR(4));
 }
+
 void Window::updateWin(void)
 {
-  box(this->win, 0, 0);
+  box(this->win,0,0);
   clearMyWin();
-
   refresh();
 }
 
@@ -293,11 +298,9 @@ void	Window::play(void)
           this->moveElements(this->lastInput);
           this->printGame();
           if (!this->handleCollision()) {
-
               return;
             }
           this->lastInput = ERR;
-
           this->start = this->now;
           this->frameCount++;
       }
