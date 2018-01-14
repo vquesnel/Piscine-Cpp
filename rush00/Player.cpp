@@ -6,17 +6,18 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:08 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 13:15:32 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 11:56:45 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Player.hpp"
+# include "Player.hpp"
+# include "Window.hpp"
 
 Player::Player(void) :
   AEnv(),
   _life(5)
 {
-  this->_form = "►";
+  this->_form = "=>";
 }
 
 Player::Player(Player const &instance) :
@@ -30,7 +31,7 @@ Player::Player(int x, int y) :
   AEnv(x, y),
   _life(5)
 {
-  this->_form = "►";
+  this->_form = "=>";
 }
 
 Player::~Player(void) {}
@@ -38,11 +39,6 @@ Player::~Player(void) {}
 int       Player::getLife(void) const
 {
   return this->_life;
-}
-
-char      Player::getForm(void) const
-{
-  return this->_form;
 }
 
 bool  Player::move(int frameCount)

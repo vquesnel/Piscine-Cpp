@@ -5,52 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/06 13:32:12 by vquesnel          #+#    #+#              #
-#    Updated: 2018/01/13 15:14:15 by vquesnel         ###   ########.fr        #
+#    Created: 2018/01/09 19:59:32 by vquesnel          #+#    #+#              #
+#    Updated: 2018/01/14 00:31:14 by vquesnel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= ft_retro
-LOGIN= vquesnel
 
-SRCS= ABullet.cpp\
-			AEnv.cpp\
-			Enemy.cpp\
-			EnemyBullet.cpp\
-			Player.cpp\
-			PlayerBullet.cpp\
+NAME = ft_retro
+COMPILATOR = clang++
+FLAGS = -Werror -Wall -Wextra
+NCURSES = -lncurses
+SRC = main.cpp ABullet.cpp AEnv.cpp Enemy.cpp EnemyBullet.cpp Player.cpp \
+PlayerBullet.cpp Window.cpp
+OBJ = $(SRC:.cpp=.o)
 
-OBJS= $(SRCS:.cpp=.o)
-FLAGS= -Wall -Wextra -Werror -lncurses
+all: $(NAME)
 
-$(NAME):	$(OBJS)
-	@clang++ -o $(NAME) $(OBJS)
-	@echo "\033[38;5;79m  [$(NAME)]	Compiled."
-	@echo "\033[34m"
-	@echo "\033[38;5;84m  MMMºººAMV '7MMºººYb.   '7MMºººMq. "
-	@echo "  M'   AMV    MM    'Yb.   MM   'MM."
-	@echo "\033[38;5;85m  '   AMV     MM     'Mb   MM   ,M9 "
-	@echo "     AMV      MM      MM   MMmmdM9  "
-	@echo "\033[38;5;86m    AMV   ,   MM     ,MP   MM"
-	@echo "   AMV   ,M   MM    ,dP'   MM"
-	@echo "\033[38;5;87m  AMVmmmmMM .JMMmmmdP'   .JMML. "
-	@echo ""
-	@echo "\033[38;5;7m [2018]                    [${LOGIN}]"
-	@echo ""
+$(NAME): $(OBJ)
+	$(COMPILATOR) $(FLAGS) $(NCURSES) $(OBJ) -o $(NAME)
 
-$(OBJS): %.o: %.cpp
-	@clang++ $(FLAGS) -c $< -o $@
-
-all:	$(NAME)
+%.o: %.cpp
+	$(COMPILATOR) -o $@ -c $< $(FLAGS)
 
 clean:
-	@rm -f $(OBJS)
-	@echo "\033[38;5;174m  [$(NAME)]	Objects destroyed.\033[0m"
+	@rm -rf $(OBJ)
 
-fclean:	clean
-	@rm -f $(NAME)
-	@echo "\033[38;5;174m  [$(NAME)]	Binary removed.\033[0m"
+fclean: clean
+	@rm -rf $(NAME)
 
-re:		fclean all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY : re fclean clean all

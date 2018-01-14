@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mseinic <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mseinic <mseinic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 12:54:50 by mseinic           #+#    #+#             */
-/*   Updated: 2018/01/13 14:53:08 by mseinic          ###   ########.fr       */
+/*   Updated: 2018/01/13 22:39:56 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Screen.hpp"
+#include "Window.hpp"
 
 int main()
 {
-    Screen  main_game;
+    Window win;
 
-    main_game.playGame();
+    win.play();
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:06 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 13:12:05 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 11:56:22 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ class AEnv {
   virtual void  toPrint();
   int		        getX( void ) const;
   int		        getY( void ) const;
+  std::string    getForm(void) const;
 
   protected:
     int _x;
     int _y;
-    char _form;
+    std::string _form;
 };
 
 #endif

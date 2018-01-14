@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:05 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 13:15:28 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 11:56:39 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ class Player : public AEnv {
     using   AEnv::operator=;
   	bool	  move(int);
     void    move(int const key, int const frameCount);
-    char    getForm() const;
     int     getLife() const;
-  protected:
     int     _life;
 };
 

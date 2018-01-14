@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 11:44:01 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/13 12:58:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/14 12:57:49 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Enemy::Enemy(void) :
   AEnv()
 {
-	char	form[2] = {'<','C'};
+	std::string form[] = {"#=#", "[-]"};
 
 	this->_form = form[rand() % 2];
 }
@@ -23,7 +23,7 @@ Enemy::Enemy(void) :
 Enemy::Enemy(int x, int y) :
   AEnv(x, y)
 {
-  char	form[2] = {'<','C'};
+  std::string form[] = {"#=#", "[-]"};
 
   this->_form = form[rand() % 2];
 }
