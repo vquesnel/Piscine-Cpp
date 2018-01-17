@@ -6,13 +6,14 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 14:51:22 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/16 15:24:55 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/17 17:15:32 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <sstream>
 
 struct Data
 {
@@ -29,8 +30,9 @@ void	 *serialize(void)
 
 	for (c = 0; c < 8; c++)
 		buf.push_back(rdm[rand() % static_cast<int>(sizeof(rdm) - 1)]);
-	for (c = 0; c < 8; c++)
-		buf.push_back(rdm[rand() % 10]);
+	std::stringstream ss;
+	ss << rand();
+	buf.append(ss.str());
 	for (c = 0; c < 8; c++)
 		buf.push_back(rdm[rand() % static_cast<int>(sizeof(rdm) - 1)]);
 
@@ -41,12 +43,10 @@ static Data *deserialize(void *raw)
 {
 	Data *data = new Data;
 
-  std::cout << "Serial data equals = " << static_cast<char *>(raw) <<std::endl;
-
 	std::string result = reinterpret_cast<char *>(raw);
   data->s1 = result.substr(0, 8);
-  data->n = atoi(result.substr(8, 8).c_str());
-	data->s2 = result.substr(16);
+  data->n = atoi(result.substr(8, result.size() - 16).c_str());
+	data->s2 = result.substr(result.size() - 8);
 
 	return data;
 }

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 09:35:32 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/16 14:46:47 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/17 14:56:17 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char    Conv::FindType(std::string const &string) const
   char  pointChar = 0;
   char  fChar = 0;
   char  minusChar = 0;
+  char  plusChar = 0;
 
   if (string.size() == 1) {
     return isdigit(*sampleString) ? INT : CHAR;
@@ -72,11 +73,14 @@ char    Conv::FindType(std::string const &string) const
     else if (sampleString[i] == '-') {
       minusChar++;
     }
+    else if (sampleString[i] == '+') {
+      plusChar++;
+    }
     else if (!isdigit(sampleString[i])) {
       return ERROR;
     }
   }
-  if (pointChar > 1 || fChar > 1 || minusChar > 1) {
+  if (pointChar > 1 || fChar > 1 || minusChar > 1 || plusChar > 1 || (plusChar  && minusChar)) {
     return ERROR;
   }
   if (pointChar && fChar) {
