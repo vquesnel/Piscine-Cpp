@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 15:18:45 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/17 15:43:30 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/17 17:41:48 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int main( void ) {
 
   ::swap( a, b );
   std::cout << "a = " << a << ", b = " << b << std::endl;
-  std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-  std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl << std::endl;
+  std::cout << "min( a, b ) = " << min( a, b ) << std::endl;
+  std::cout << "max( a, b ) = " << max( a, b ) << std::endl << std::endl;
 
   std::string c = "chaine1";
   std::string d = "chaine2";
