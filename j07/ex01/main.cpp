@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 17:26:31 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/17 18:07:22 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/17 18:17:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Awesome {
 std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
 template< typename T, typename F>
-void	iter( T *array, unsigned int length, F f)
+void	iter(T *array, unsigned int length, F f)
 {
 	for (unsigned int i = 0; i < length; ++i)
 		f(array[i]);
