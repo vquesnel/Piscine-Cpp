@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 13:44:50 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/18 16:43:00 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/18 23:46:04 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,12 @@ int     Span::shortestSpan(void) const
 {
     std::vector<int>   cpy = this->_store;
     std::sort(cpy.begin(), cpy.end());
+    // for(size_t i = 0; i < cpy.size(); i++) std::cout << cpy[i] << std::endl;
     if (cpy.size() ==  1) {
       throw std::runtime_error("Only one value, can't find a span");
     }
     std::adjacent_difference(cpy.begin(), cpy.end(), cpy.begin() - 1);
-    return cpy[std::distance(cpy.begin(), std::min_element(cpy.begin(), cpy.end() - 1))];
+    return *(std::min_element(cpy.begin(), cpy.end()));
 }
 
 int     Span::longestSpan(void) const

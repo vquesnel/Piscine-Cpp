@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 13:44:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/18 16:42:21 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/18 23:41:48 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int main()
 		sp.addNumber(17);
 		sp.addNumber(9);
     sp.addNumber(32);
-    sp.addNumber(11);
+    // sp.addNumber(11);
 		sp.addNumber(11);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
   try {
-	   std::cout << sp.shortestSpan() << std::endl;
-	    std::cout << sp.longestSpan() << std::endl;
+	   std::cout << sp.shortestSpan()  << std::endl;
+	   std::cout << sp.longestSpan() << std::endl;
   }
   catch (std::exception &e) {
     std::cout << e.what() << std::endl;
@@ -40,7 +40,7 @@ int main()
 	Span sp2 = Span(15000);
 
 	try {
-		for (int i = 0; i < 15000; ++i)
+		for (int i = 0; i < 15; ++i)
 		{
 			sp2.addNumber(i * 10);
 		}
