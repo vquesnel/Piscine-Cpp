@@ -6,11 +6,11 @@
 #    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/16 09:34:59 by vquesnel          #+#    #+#              #
-#    Updated: 2018/01/17 15:04:05 by vquesnel         ###   ########.fr        #
+#    Updated: 2018/01/18 10:26:01 by vquesnel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= conversion
+NAME= array
 LOGIN= vquesnel
 
 SRCS= main.cpp
