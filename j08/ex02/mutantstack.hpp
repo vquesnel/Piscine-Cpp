@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 17:22:44 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/18 18:37:57 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/19 00:24:16 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class MutantStack: public std::stack<T>
 {
   public:
     MutantStack(void) : std::stack<T>() {}
-    ~MutantStack(void);
+    ~MutantStack(void){}
     MutantStack(MutantStack<T> const &instance):std::stack<T>(instance){}
     using     std::stack<T>::operator=;
     typedef typename std::stack<T>::container_type::iterator iterator;
-    iterator	begin() { return std::stack<T>::c.begin(); }
-    iterator	end() { return std::stack<T>::c.end(); }
+    iterator	begin() { return this->c.begin(); }
+    iterator	end() { return this->c.end(); }
 };
 
 #endif

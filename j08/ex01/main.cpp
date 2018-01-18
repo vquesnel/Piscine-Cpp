@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 13:44:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/18 23:41:48 by victor           ###   ########.fr       */
+/*   Updated: 2018/01/18 23:58:16 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int main()
 	Span sp = Span(5);
 
 	try {
-		sp.addNumber(5);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
+		sp.addNumber(-4);
+		sp.addNumber(12);
+		sp.addNumber(-7);
+		sp.addNumber(15);
     sp.addNumber(32);
     // sp.addNumber(11);
 		sp.addNumber(11);
