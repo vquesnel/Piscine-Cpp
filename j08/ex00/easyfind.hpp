@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 12:55:03 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/18 23:23:51 by victor           ###   ########.fr       */
+/*   Updated: 2018/01/19 15:15:13 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 template<typename T>
 int   easyfind(T &container, int x) {
-    typename T::const_iterator it = find (container.begin(), container.end(), x);
+    typename T::const_iterator it = find(container.begin(), container.end(), x);
     if (it != container.end()) {
       return *it;
     }
