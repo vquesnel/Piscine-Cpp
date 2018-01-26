@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 17:29:53 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/01/19 16:03:36 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/01/26 18:57:02 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typename MutantStack<T>::iterator  &MutantStack<T>::iterator::operator++(void)
 template<typename T>
 typename MutantStack<T>::iterator  &MutantStack<T>::iterator::operator--(void)
 {
-  if (this->_i < this->_instance.size())
+  if (this->_i > 0)
     this->_i--;
   return *this;
 }
@@ -60,7 +60,7 @@ template<typename T>
 typename MutantStack<T>::iterator  MutantStack<T>::iterator::operator--(int)
 {
   MutantStack<T>::iterator tmp(*this);
-  if (this->_i < this->_instance.size())
+  if (this->_i > 0)
     this->_i--;
   return tmp;
 }
